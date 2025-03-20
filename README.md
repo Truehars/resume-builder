@@ -32,7 +32,7 @@ The Academic template includes special sections for:
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/resume-builder.git
+   git clone https://github.com/Truehars/resume-builder.git
    ```
 
 2. Open `index.html` in your browser.
@@ -41,7 +41,7 @@ The Academic template includes special sections for:
 
 ## Deployment
 
-The site is deployed using GitHub Pages at [your-github-pages-url].
+The site is deployed using GitHub Pages at [https://truehars.github.io/resume-builder/](https://truehars.github.io/resume-builder/).
 
 ## How to Contribute
 
