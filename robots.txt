@@ -1,0 +1,10 @@
+# Allow all web crawlers to access all content
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://truehars.github.io/resume-builder/sitemap.xml
+
+# Disallow specific files or directories not needed for indexing
+Disallow: /assets/icons/
+Disallow: /.git/ 
