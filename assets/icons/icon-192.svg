@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="192" height="192" rx="24" fill="#1e3a8a"/>
+  
+  <!-- Document outline -->
+  <rect x="36" y="24" width="120" height="144" rx="6" fill="white"/>
+  
+  <!-- Header lines -->
+  <rect x="54" y="42" width="60" height="6" rx="3" fill="#2563eb"/>
+  <rect x="54" y="54" width="84" height="4.5" rx="2.25" fill="#d1d5db"/>
+  <rect x="54" y="63" width="72" height="4.5" rx="2.25" fill="#d1d5db"/>
+  
+  <!-- Section lines -->
+  <rect x="54" y="81" width="30" height="6" rx="3" fill="#2563eb"/>
+  <rect x="54" y="91.5" width="84" height="3" rx="1.5" fill="#e5e7eb"/>
+  <rect x="54" y="99" width="84" height="3" rx="1.5" fill="#e5e7eb"/>
+  
+  <rect x="54" y="111" width="30" height="6" rx="3" fill="#2563eb"/>
+  <rect x="54" y="121.5" width="84" height="3" rx="1.5" fill="#e5e7eb"/>
+  <rect x="54" y="129" width="84" height="3" rx="1.5" fill="#e5e7eb"/>
+  
+  <rect x="54" y="141" width="30" height="6" rx="3" fill="#2563eb"/>
+  <rect x="54" y="151.5" width="42" height="3" rx="1.5" fill="#e5e7eb"/>
+  <rect x="100.5" y="151.5" width="37.5" height="3" rx="1.5" fill="#e5e7eb"/>
+</svg> 

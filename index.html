@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder | Create Professional Resumes</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.svg">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/templates.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <meta name="description" content="Create professional resumes with this free, easy-to-use resume builder">
+</head>
+<body>
+    <header class="app-header">
+        <div class="container">
+            <h1>Resume Builder</h1>
+            <p class="tagline">Create professional resumes in minutes</p>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="container">
+            <div class="app-grid">
+                <!-- Form Section -->
+                <section class="form-section" id="form-container">
+                    <div class="form-navigation">
+                        <ul class="steps">
+                            <li class="step active" data-step="personal">Personal Info</li>
+                            <li class="step" data-step="education">Education</li>
+                            <li class="step" data-step="experience">Experience</li>
+                            <li class="step" data-step="skills">Skills</li>
+                            <li class="step" data-step="customize">Customize</li>
+                        </ul>
+                    </div>
+
+                    <!-- Personal Info Form -->
+                    <div class="form-step active" id="personal-form">
+                        <h2>Personal Information</h2>
+                        <form id="personal-info-form">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="jobTitle">Job Title</label>
+                                <input type="text" id="jobTitle" name="jobTitle">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" name="location" placeholder="City, State">
+                            </div>
+                            <div class="form-group">
+                                <label for="summary">Professional Summary</label>
+                                <textarea id="summary" name="summary" rows="4"></textarea>
+                                <div class="form-help">
+                                    <p><strong>Tip for Academic Template:</strong> For the academic template, this field will be used as "Scholastic Achievements". Enter each achievement on a new line for proper formatting.</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="website">Website</label>
+                                    <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="linkedin">LinkedIn</label>
+                                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-next" data-next="education">Next: Education</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Education Form -->
+                    <div class="form-step" id="education-form">
+                        <h2>Education</h2>
+                        <div id="education-list"></div>
+                        <form id="education-info-form">
+                            <div class="form-group">
+                                <label for="institution">Institution</label>
+                                <input type="text" id="institution" name="institution" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="degree">Degree</label>
+                                <input type="text" id="degree" name="degree" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="eduStartDate">Start Date</label>
+                                    <input type="month" id="eduStartDate" name="eduStartDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eduEndDate">End Date</label>
+                                    <input type="month" id="eduEndDate" name="eduEndDate">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="eduCurrent" name="eduCurrent">
+                                        <label for="eduCurrent">Currently Studying</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="eduDescription">Description</label>
+                                <textarea id="eduDescription" name="eduDescription" rows="3"></textarea>
+                                <div class="form-help">
+                                    <p><strong>Tip for Academic Template:</strong> For the academic template, this field will be used as "CPI/%" in the education table. Enter your grade point average or percentage here.</p>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-add" id="add-education">Add Education</button>
+                                <div class="navigation-buttons">
+                                    <button type="button" class="btn btn-prev" data-prev="personal">Previous</button>
+                                    <button type="button" class="btn btn-next" data-next="experience">Next: Experience</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Experience Form -->
+                    <div class="form-step" id="experience-form">
+                        <h2>Work Experience</h2>
+                        <div id="experience-list"></div>
+                        <form id="experience-info-form">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Position</label>
+                                <input type="text" id="position" name="position" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expStartDate">Start Date</label>
+                                    <input type="month" id="expStartDate" name="expStartDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expEndDate">End Date</label>
+                                    <input type="month" id="expEndDate" name="expEndDate">
+                                    <div class="checkbox-group">
+                                        <input type="checkbox" id="expCurrent" name="expCurrent">
+                                        <label for="expCurrent">Currently Working</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="expDescription">Description</label>
+                                <textarea id="expDescription" name="expDescription" rows="4" placeholder="Describe your responsibilities and achievements"></textarea>
+                                <div class="form-help">
+                                    <p><strong>Tip for Academic Template:</strong> For the academic template, this section will be used as "Key Projects". Enter each project detail on a new line for proper bullet point formatting.</p>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-add" id="add-experience">Add Experience</button>
+                                <div class="navigation-buttons">
+                                    <button type="button" class="btn btn-prev" data-prev="education">Previous</button>
+                                    <button type="button" class="btn btn-next" data-next="skills">Next: Skills</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Skills Form -->
+                    <div class="form-step" id="skills-form">
+                        <h2>Skills</h2>
+                        <div id="skills-list"></div>
+                        <form id="skills-info-form">
+                            <div class="form-group">
+                                <label for="skillName">Skill</label>
+                                <input type="text" id="skillName" name="skillName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="skillLevel">Level</label>
+                                <select id="skillLevel" name="skillLevel">
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Advanced">Advanced</option>
+                                    <option value="Expert">Expert</option>
+                                    <option value="Competitive Programming">Competitive Programming</option>
+                                    <option value="Extra Curricular">Extra Curricular</option>
+                                </select>
+                            </div>
+                            <div class="form-help">
+                                <p><strong>Tip for Academic Template:</strong></p>
+                                <ul>
+                                    <li>Use "Competitive Programming" level for competitive programming achievements</li>
+                                    <li>Use "Extra Curricular" level for extracurricular activities</li>
+                                    <li>Use other levels for technical skills</li>
+                                </ul>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-add" id="add-skill">Add Skill</button>
+                                <div class="navigation-buttons">
+                                    <button type="button" class="btn btn-prev" data-prev="experience">Previous</button>
+                                    <button type="button" class="btn btn-next" data-next="customize">Next: Customize</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Customize Form -->
+                    <div class="form-step" id="customize-form">
+                        <h2>Customize Your Resume</h2>
+                        <form id="customize-info-form">
+                            <div class="form-group">
+                                <label for="template">Template</label>
+                                <div class="template-selector">
+                                    <div class="template-option active" data-template="classic">
+                                        <div class="template-preview classic-preview"></div>
+                                        <span>Classic</span>
+                                    </div>
+                                    <div class="template-option" data-template="modern">
+                                        <div class="template-preview modern-preview"></div>
+                                        <span>Modern</span>
+                                    </div>
+                                    <div class="template-option" data-template="minimal">
+                                        <div class="template-preview minimal-preview"></div>
+                                        <span>Minimal</span>
+                                    </div>
+                                    <div class="template-option" data-template="academic">
+                                        <div class="template-preview academic-preview"></div>
+                                        <span>Academic</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="colorScheme">Color Scheme</label>
+                                <div class="color-selector">
+                                    <div class="color-option active" data-color="blue" style="background-color: #2c3e50;"></div>
+                                    <div class="color-option" data-color="green" style="background-color: #27ae60;"></div>
+                                    <div class="color-option" data-color="purple" style="background-color: #8e44ad;"></div>
+                                    <div class="color-option" data-color="red" style="background-color: #c0392b;"></div>
+                                    <div class="color-option" data-color="gray" style="background-color: #7f8c8d;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fontSize">Font Size</label>
+                                <div class="range-slider">
+                                    <input type="range" id="fontSize" name="fontSize" min="90" max="110" value="100">
+                                    <span id="fontSizeValue">100%</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="navigation-buttons">
+                                    <button type="button" class="btn btn-prev" data-prev="skills">Previous</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Preview Section -->
+                <section class="preview-section" id="preview-container">
+                    <div class="preview-header">
+                        <h2>Preview</h2>
+                        <div class="preview-actions">
+                            <button id="download-pdf" class="btn btn-primary">Download PDF</button>
+                            <button id="print-resume" class="btn">Print</button>
+                        </div>
+                    </div>
+                    <div class="preview-content">
+                        <div id="resume-preview" class="resume-preview template-classic color-blue">
+                            <!-- Resume preview will be rendered here -->
+                            <div class="resume-loading">
+                                <p>Fill in your information to see the preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-hero">
+        <div class="hero-background">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <h2>Resume Builder</h2>
+                            <p>Create professional resumes that stand out from the crowd. Fast, easy, and completely free.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                                </a>
+                                <a href="mailto:gamingwithyou878@gmail.com" class="social-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-nav">
+                            <h3>Templates</h3>
+                            <ul>
+                                <li><a href="#">Classic</a></li>
+                                <li><a href="#">Modern</a></li>
+                                <li><a href="#">Minimal</a></li>
+                                <li><a href="#">Academic</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-nav">
+                            <h3>Resources</h3>
+                            <ul>
+                                <li><a href="#">Resume Tips</a></li>
+                                <li><a href="#">Cover Letter Guide</a></li>
+                                <li><a href="#">Interview Preparation</a></li>
+                                <li><a href="#">Career Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-cta">
+                            <h3>Need a custom website?</h3>
+                            <p>Let me help you create a stunning online presence.</p>
+                            <a href="mailto:gamingwithyou878@gmail.com" class="btn btn-white">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; <span id="current-year">2023</span> Resume Builder. All data is stored locally in your browser.</p>
+                        <div class="footer-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Use</a>
+                            <a href="#">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js" type="module"></script>
+</body>
+</html> 

@@ -1,0 +1,167 @@
+/* 
+ * Resume Builder - Print Stylesheet
+ * Optimizes resume for printing and PDF export
+ */
+
+/* Hide non-printable elements */
+.app-header,
+.app-footer,
+.form-section,
+.preview-header,
+.preview-actions {
+    display: none !important;
+}
+
+/* Reset page margins and background */
+@page {
+    size: letter portrait;
+    margin: 0.5in;
+}
+
+body {
+    background-color: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Adjust container for printing */
+.container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.app-main {
+    padding: 0 !important;
+}
+
+.app-grid {
+    display: block !important;
+    margin: 0 !important;
+}
+
+/* Optimize preview section for printing */
+.preview-section {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background-color: white !important;
+}
+
+.preview-content {
+    border: none !important;
+    box-shadow: none !important;
+    min-height: auto !important;
+}
+
+/* Ensure resume fits on page */
+.resume-preview {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    page-break-inside: avoid;
+}
+
+/* Ensure sections don't break across pages */
+.resume-preview section {
+    page-break-inside: avoid;
+}
+
+/* Ensure proper font rendering */
+.resume-preview {
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    color: black !important;
+}
+
+/* Ensure links print with their URLs */
+.resume-preview a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.resume-preview a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+/* Template-specific print adjustments */
+
+/* Classic Template */
+.template-classic {
+    padding: 0 !important;
+}
+
+/* Modern Template */
+.template-modern {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+}
+
+.template-modern .resume-sidebar {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.template-modern .resume-sidebar .section-title {
+    color: black !important;
+    border-bottom-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.template-modern .skill-item {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+/* Minimal Template */
+.template-minimal {
+    padding: 0 !important;
+}
+
+/* Academic Template */
+.template-academic {
+    padding: 0 !important;
+}
+
+.template-academic .education-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+.template-academic .education-table th,
+.template-academic .education-table td {
+    border: 1px solid #d3d3d3 !important;
+    padding: 0.3rem !important;
+}
+
+.template-academic .section-title {
+    background-color: #d3d3d3 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.template-academic .bullet-list {
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin: 0.5rem 0 !important;
+}
+
+.template-academic .section {
+    margin-bottom: 0.8rem !important;
+    page-break-inside: avoid !important;
+}
+
+/* Ensure color printing */
+* {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+} 
